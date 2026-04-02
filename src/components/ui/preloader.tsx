@@ -3,13 +3,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { usePreloader } from "@/context/PreloaderContext";
 
 const words = [
-  "Inicializando sistema...",
-  "Carregando módulos...",
-  "Processando dados...",
-  "Otimizando processos...",
-  "Aplicando tecnologia...",
-  "Garantindo eficiência...",
-  "Finalizando operação...",
+  "Proatividade",
+  "Organização",
+  "Trabalho em equipe",
+  "Aprendizado contínuo",
+  "Pensamento lógico",
+  "Resolução de problemas",
+  "Foco em resultados",
+  "Construindo meu futuro na indústria...",
 ];
 
 export const Preloader = () => {
@@ -22,19 +23,19 @@ export const Preloader = () => {
       setCurrentWordIndex(-1);
       setShowSignature(true);
 
-      // Etapa 1: Assinatura "Lucas Patrick" por 0.8 segundos (mais rápida)
+      // Etapa 1: Assinatura "Lucas Patrick" por 0.8 segundos
       const signatureTimer = setTimeout(() => {
         setShowSignature(false);
         setCurrentWordIndex(0);
       }, 800);
 
-      // Etapa 2: Ciclar pelas palavras (restante do tempo)
+      // Etapa 2: Ciclar pelas 8 palavras (restante de 4.2 segundos)
       const wordInterval = setInterval(() => {
         setCurrentWordIndex((prev) => {
           if (prev < words.length - 1) return prev + 1;
           return prev;
         });
-      }, 600); // 7 palavras * 0.6s = 4.2s + 0.8s signature = exatos 5 segundos
+      }, 525); // 8 palavras * 0.525s = 4.2s + 0.8s signature = 5 segundos exatos
 
       return () => {
         clearTimeout(signatureTimer);
