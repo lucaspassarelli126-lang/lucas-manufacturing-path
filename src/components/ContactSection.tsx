@@ -1,7 +1,7 @@
 import SectionWrapper from "./SectionWrapper";
 import SectionTitle from "./SectionTitle";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, Instagram } from "lucide-react";
+import { Phone, Mail, AtSign } from "lucide-react";
 
 const contacts = [
   {
