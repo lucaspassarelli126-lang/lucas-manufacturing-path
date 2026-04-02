@@ -3,6 +3,38 @@ import SectionTitle from "./SectionTitle";
 import { Leaf, Code2, CheckCircle2, ArrowRight, Lightbulb, Target } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
+
+const TypewriterText = ({ text, className = "", delay = 0 }: { text: string; className?: string; delay?: number }) => {
+  return (
+    <motion.span
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-20px" }}
+      variants={{
+        visible: {
+          transition: {
+            delayChildren: delay,
+            staggerChildren: 0.015,
+          },
+        },
+      }}
+      className={className}
+    >
+      {text.split("").map((char, index) => (
+        <motion.span
+          key={index}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1 },
+          }}
+        >
+          {char}
+        </motion.span>
+      ))}
+    </motion.span>
+  );
+};
 
 const projects = [
   {
@@ -66,9 +98,9 @@ const ProjectsSection = () => (
                 <Lightbulb className="w-4 h-4" />
                 <h4>Contexto do Projeto</h4>
               </div>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {project.context}
-              </p>
+              <div className="text-muted-foreground text-sm leading-relaxed">
+                <TypewriterText text={project.context} />
+              </div>
             </div>
 
             {/* Actions */}
@@ -81,7 +113,7 @@ const ProjectsSection = () => (
                 {project.actions.map((action, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-sm text-foreground/80">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mt-1.5 shrink-0" />
-                    <span>{action}</span>
+                    <TypewriterText text={action} delay={idx * 0.1} />
                   </li>
                 ))}
               </ul>
@@ -97,7 +129,7 @@ const ProjectsSection = () => (
                 {project.results.map((result, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-sm text-foreground/80">
                     <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
-                    <span>{result}</span>
+                    <TypewriterText text={result} delay={idx * 0.1} />
                   </li>
                 ))}
               </ul>
