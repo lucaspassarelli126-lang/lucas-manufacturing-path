@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
+import { NeonButton } from './neon-button';
 import { ChevronDown } from 'lucide-react';
 import { SmokeBackground } from "./spooky-smoke-animation";
 
@@ -67,12 +67,8 @@ export const HeroFuturistic = () => {
            transition={{ duration: 0.8, delay: 1 }}
            className="flex flex-col sm:flex-row gap-6 justify-center"
         >
-          <Button variant="destructive" size="lg" className="px-10 py-8 text-xl rounded-none font-bold uppercase tracking-widest hover:scale-105 transition-transform shadow-[0_0_20px_rgba(230,57,70,0.4)]" asChild>
-            <a href="#sobre">Ver meu perfil</a>
-          </Button>
-          <Button variant="outline" size="lg" className="border-white/20 text-white rounded-none px-10 py-8 text-xl font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all" asChild>
-             <a href="#contato">Entrar em contato</a>
-          </Button>
+          <NeonButton variant="destructive" size="lg" className="px-10 py-8 text-xl rounded-none font-bold uppercase tracking-widest hover:scale-105 transition-transform shadow-[0_0_20px_rgba(230,57,70,0.4)]" asChild><a href="#sobre">Ver meu perfil</a></NeonButton>
+          <NeonButton variant="outline" size="lg" className="border-white/20 text-white rounded-none px-10 py-8 text-xl font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all" asChild><a href="#contato">Entrar em contato</a></NeonButton>
         </motion.div>
       </div>
 
