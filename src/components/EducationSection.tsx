@@ -53,21 +53,40 @@ const EducationSection = () => (
   <SectionWrapper id="formacao">
     <SectionTitle title="Formação e Cursos" subtitle="Educação" />
     <div className="grid lg:grid-cols-1 gap-10">
-      <div className="p-8 rounded-xl bg-secondary border border-border">
-        <div className="flex items-center gap-3 mb-4">
-          <GraduationCap className="w-8 h-8 text-primary" />
-          <div>
-            <h3 className="font-display text-xl font-bold text-foreground">
-              Técnico em Administração
-            </h3>
-            <p className="text-sm text-muted-foreground">Ensino Médio Técnico</p>
+      <div className="grid md:grid-cols-2 gap-6 w-full">
+        <div className="p-8 rounded-xl bg-secondary border border-border h-full">
+          <div className="flex items-center gap-3 mb-4">
+            <GraduationCap className="w-8 h-8 text-primary shrink-0" />
+            <div>
+              <h3 className="font-display text-xl font-bold text-foreground leading-tight">
+                Técnico em Administração
+              </h3>
+              <p className="text-sm text-muted-foreground mt-1">Ensino Médio Técnico</p>
+            </div>
           </div>
+          <ul className="space-y-2 text-muted-foreground">
+            <li>• Base em organização de processos</li>
+            <li>• Conhecimento em controle e planejamento</li>
+            <li>• Facilidade com números e dados</li>
+          </ul>
         </div>
-        <ul className="space-y-2 text-muted-foreground mb-8">
-          <li>• Base em organização de processos</li>
-          <li>• Conhecimento em controle e planejamento</li>
-          <li>• Facilidade com números e dados</li>
-        </ul>
+
+        <div className="p-8 rounded-xl bg-secondary border border-border h-full">
+          <div className="flex items-center gap-3 mb-4">
+            <GraduationCap className="w-8 h-8 text-primary shrink-0" />
+            <div>
+              <h3 className="font-display text-xl font-bold text-foreground leading-tight">
+                Nutrição
+              </h3>
+              <p className="text-sm text-muted-foreground mt-1">UNIP Noturno</p>
+            </div>
+          </div>
+          <ul className="space-y-2 text-muted-foreground">
+            <li>• Promove saúde e bem-estar</li>
+            <li>• Foco em alimentação saudável e nutrição</li>
+            <li>• Dedicação para conciliar estudos e horários produtivos</li>
+          </ul>
+        </div>
       </div>
 
       <div className="w-full">
