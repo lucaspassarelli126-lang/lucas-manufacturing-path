@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import { SmokeBackground } from "@/components/ui/spooky-smoke-animation";
 
 const HeroSection = () => (
   <section
@@ -12,6 +13,9 @@ const HeroSection = () => (
     <div className="absolute inset-0">
       <img src={heroBg} alt="" className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-b from-industrial-dark/80 via-industrial-dark/70 to-industrial-dark/95" />
+      <div className="absolute inset-0 opacity-40 mix-blend-screen pointer-events-none">
+        <SmokeBackground smokeColor="#e63946" />
+      </div>
       <div className="absolute inset-0 industrial-grid" />
     </div>
 
