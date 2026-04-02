@@ -69,6 +69,24 @@
   }
 }
 
+/* ── Neon border spinning animations ─────────────────────────────────── */
+@keyframes neon-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes neon-spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.neon-spin {
+  animation: neon-spin 2s linear infinite;
+}
+.neon-spin-slow {
+  animation: neon-spin-slow 4s linear infinite;
+}
+/* ─────────────────────────────────────────────────────────────────────── */
+
 @layer utilities {
   .text-gradient-red {
     @apply bg-clip-text text-transparent;
