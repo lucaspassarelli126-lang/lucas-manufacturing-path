@@ -46,6 +46,12 @@ const courseImages = [
     alt: 'Estudos e idiomas',
     label: 'Inglês Básico',
     desc: 'Compreensão de leitura e comunicação fundamental.'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=900&auto=format&fit=crop&q=60',
+    alt: 'Gestão de estoque e armazém',
+    label: 'Gestão Integrada Aplicada à Logística',
+    desc: 'Visão sistêmica e integração de processos no setor logístico.'
   }
 ];
 
