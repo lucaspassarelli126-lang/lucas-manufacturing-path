@@ -39,7 +39,7 @@ const HeroSection = () => (
         className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-4 leading-[1.1]"
       >
         Lucas{" "}
-        <span className="text-gradient-red">Passarelli</span>
+        <span className="text-gradient-red">Patrick</span>
       </motion.h1>
 
       <motion.p
