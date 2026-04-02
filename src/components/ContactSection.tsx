@@ -8,7 +8,7 @@ const contacts = [
     icon: Phone,
     label: "WhatsApp",
     value: "(19) 98261-4845",
-    href: "https://wa.me/5519982614845",
+    href: "https://api.whatsapp.com/send/?phone=19982614845&text&type=phone_number&app_absent=0&utm_source",
   },
   {
     icon: Mail,
@@ -48,8 +48,8 @@ const ContactSection = () => (
       <p className="font-display text-xl md:text-2xl font-semibold text-foreground mb-6">
         "Estou pronto para aprender, contribuir e crescer junto com a Bosch."
       </p>
-      <Button withPreloader={true} variant="hero" size="lg" asChild>
-        <a href="https://wa.me/5519982614845" target="_blank" rel="noopener noreferrer">
+      <Button variant="hero" size="lg" asChild>
+        <a href="https://api.whatsapp.com/send/?phone=19982614845&text&type=phone_number&app_absent=0&utm_source" target="_blank" rel="noopener noreferrer">
           Entre em contato pelo WhatsApp
         </a>
       </Button>
