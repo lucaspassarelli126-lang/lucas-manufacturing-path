@@ -177,30 +177,55 @@ const Scene = () => {
   );
 };
 
+import { Suspense, Component } from 'react';
+
+// Error boundary to prevent 3D crashes from taking down the whole page
+class ErrorBoundary extends Component<any, { hasError: boolean }> {
+  constructor(props: any) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError(error: any) {
+    return { hasError: true };
+  }
+  componentDidCatch(error: any, errorInfo: any) {
+    console.warn("WebGL/WebGPU Error:", error);
+  }
+  render() {
+    if (this.state.hasError) {
+      return null;
+    }
+    return this.props.children;
+  }
+}
+
 export const HeroFuturistic = () => {
   return (
-    <div className="relative min-h-screen flex w-full overflow-hidden bg-black items-center justify-center">
+    <div className="relative min-h-[100dvh] flex flex-col w-full overflow-hidden bg-black items-center justify-center">
       {/* ThreeJS Background Canvas */}
       <div className="absolute inset-0 z-0 opacity-40 mix-blend-screen pointer-events-none">
-         <Canvas
-          flat
-          gl={async (props) => {
-            try {
-              // Only initialize if WebGPURenderer is available in this env
-              if (THREE.WebGPURenderer) {
-                const renderer = new THREE.WebGPURenderer(props as any);
-                await renderer.init();
-                return renderer;
-              }
-            } catch (e) {
-              console.warn("WebGPU not supported", e);
-            }
-            return new THREE.WebGLRenderer(props as any);
-          }}
-        >
-          {THREE.WebGPURenderer && <PostProcessing fullScreenEffect={true} />}
-          <Scene />
-        </Canvas>
+        <ErrorBoundary>
+          <Suspense fallback={null}>
+            <Canvas
+              flat
+              gl={async (props) => {
+                try {
+                  if (THREE.WebGPURenderer) {
+                    const renderer = new THREE.WebGPURenderer(props as any);
+                    await renderer.init();
+                    return renderer;
+                  }
+                } catch (e) {
+                  console.warn("WebGPU not supported", e);
+                }
+                return new THREE.WebGLRenderer(props as any);
+              }}
+            >
+              {THREE.WebGPURenderer && <PostProcessing fullScreenEffect={true} />}
+              <Scene />
+            </Canvas>
+          </Suspense>
+        </ErrorBoundary>
       </div>
       
       {/* Add grid to match overall theme */}
