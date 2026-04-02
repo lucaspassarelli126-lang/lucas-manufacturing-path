@@ -9,6 +9,7 @@ const points = [
   "Aprendo rápido e me adapto fácil",
   "Tenho interesse real pela área industrial",
   "Quero crescer dentro da empresa",
+  "Foco total em segurança e qualidade operacional",
 ];
 
 const WhyMeSection = () => (
