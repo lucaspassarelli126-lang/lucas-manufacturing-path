@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { NeonButton } from './neon-button';
-import { AnimatedNeonBorder } from './animated-neon-border';
 import { ChevronDown } from 'lucide-react';
 import { SmokeBackground } from "./spooky-smoke-animation";
 
@@ -66,39 +65,10 @@ export const HeroFuturistic = () => {
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 0.8, delay: 1 }}
-           className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+           className="flex flex-col sm:flex-row gap-6 justify-center"
         >
-          {/* Botão primário com neon vermelho girando */}
-          <AnimatedNeonBorder
-            color="#e63946"
-            glowColor="rgba(230,57,70,0.8)"
-            borderRadius="9999px"
-          >
-            <NeonButton
-              variant="destructive"
-              size="lg"
-              className="px-8 py-4 text-sm rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform"
-              asChild
-            >
-              <a href="#sobre">Ver meu perfil</a>
-            </NeonButton>
-          </AnimatedNeonBorder>
-
-          {/* Botão secundário com neon branco girando */}
-          <AnimatedNeonBorder
-            color="#ffffff"
-            glowColor="rgba(255,255,255,0.6)"
-            borderRadius="9999px"
-          >
-            <NeonButton
-              variant="outline"
-              size="lg"
-              className="border-white/30 text-white rounded-full px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all"
-              asChild
-            >
-              <a href="#contato">Entrar em contato</a>
-            </NeonButton>
-          </AnimatedNeonBorder>
+          <NeonButton variant="destructive" size="lg" className="px-8 py-4 text-sm rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform shadow-[0_0_18px_rgba(230,57,70,0.8),0_0_40px_rgba(230,57,70,0.4),0_0_80px_rgba(230,57,70,0.2)] hover:shadow-[0_0_25px_rgba(230,57,70,1),0_0_60px_rgba(230,57,70,0.6),0_0_100px_rgba(230,57,70,0.3)]" asChild><a href="#sobre">Ver meu perfil</a></NeonButton>
+          <NeonButton variant="outline" size="lg" className="border-white/30 text-white rounded-full px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all shadow-[0_0_18px_rgba(255,255,255,0.25),0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.6),0_0_60px_rgba(255,255,255,0.3)]" asChild><a href="#contato">Entrar em contato</a></NeonButton>
         </motion.div>
       </div>
 
