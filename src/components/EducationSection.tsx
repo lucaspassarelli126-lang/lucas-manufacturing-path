@@ -18,7 +18,7 @@ const courseImages = [
     desc: 'Elaboração de planilhas e análise de dados.'
   },
   {
-    src: 'https://images.unsplash.com/photo-1586528116311-ad8ed7c154cb?w=900&auto=format&fit=crop&q=60',
+    src: 'https://images.unsplash.com/photo-1566576721346-d4a3b4eaad5b?w=900&auto=format&fit=crop&q=60',
     alt: 'Fluxo e controle de materiais',
     label: 'Logística',
     desc: 'Práticas logísticas e controle de fluxo de materiais.'
@@ -42,7 +42,7 @@ const courseImages = [
     desc: 'Domínio prático de ferramentas fundamentais de escritório.'
   },
   {
-    src: 'https://images.unsplash.com/photo-1546410531-bea5aadcb6ce?w=900&auto=format&fit=crop&q=60',
+    src: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=900&auto=format&fit=crop&q=60',
     alt: 'Estudos e idiomas',
     label: 'Inglês Básico',
     desc: 'Compreensão de leitura e comunicação fundamental.'
