@@ -48,7 +48,7 @@ const ContactSection = () => (
       <p className="font-display text-xl md:text-2xl font-semibold text-foreground mb-6">
         "Estou pronto para aprender, contribuir e crescer junto com a Bosch."
       </p>
-      <Button variant="hero" size="lg" asChild>
+      <Button withPreloader={true} variant="hero" size="lg" asChild>
         <a href="https://wa.me/5519982614845" target="_blank" rel="noopener noreferrer">
           Entre em contato pelo WhatsApp
         </a>

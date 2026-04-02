@@ -3,6 +3,7 @@ import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
+import { usePreloader } from "@/context/PreloaderContext";
 
 const buttonVariants = cva(
     "relative group border text-foreground mx-auto text-center rounded-full transition-all duration-300",
@@ -33,17 +34,33 @@ export interface ButtonProps
     VariantProps<typeof buttonVariants> { 
       neon?: boolean;
       asChild?: boolean;
+      withPreloader?: boolean;
     }
 
 const NeonButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
-    ({ className, neon = true, asChild = false, size, variant, children, ...props }, ref) => {
+    ({ className, neon = true, asChild = false, size, variant, children, onClick, withPreloader = false, ...props }, ref) => {
+        const { showPreloader } = usePreloader();
         const Comp = asChild ? Slot : "button"
         
+        const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+          if (withPreloader) {
+            e.preventDefault();
+            showPreloader(() => {
+              if (onClick) {
+                onClick(e);
+              }
+            });
+          } else if (onClick) {
+            onClick(e);
+          }
+        };
+
         if (asChild) {
             return (
                 <Comp
                     className={cn(buttonVariants({ variant, size }), className)}
                     ref={ref}
+                    onClick={handleClick}
                     {...props}
                 >
                     {children}
@@ -55,6 +72,7 @@ const NeonButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
             <button
                 className={cn(buttonVariants({ variant, size }), className)}
                 ref={ref}
+                onClick={handleClick}
                 {...props}
             >
                 <span className={cn("absolute h-px opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out inset-x-0 inset-y-0 bg-gradient-to-r w-3/4 mx-auto from-transparent via-primary to-transparent hidden", neon && "block")} />
