@@ -17,7 +17,7 @@ const contacts = [
     href: "mailto:lucas.passarelli00@hotmail.com",
   },
   {
-    icon: Instagram,
+    icon: AtSign,
     label: "Instagram",
     value: "@lucass_passarelli",
     href: "https://instagram.com/lucass_passarelli",
