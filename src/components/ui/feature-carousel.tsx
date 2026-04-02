@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 export interface CarouselProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
   title: React.ReactNode;
   subtitle: string;
-  images: { src: string; alt: string; label?: string }[];
+  images: { src: string; alt: string; label?: string; desc?: string }[];
 }
 
 // --- CAROUSEL SECTION COMPONENT ---
@@ -97,8 +97,9 @@ export const FeatureCarousel = React.forwardRef<HTMLDivElement, CarouselProps>(
                         alt={image.alt}
                         className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end justify-center p-6">
-                         <span className="text-white font-bold text-center text-lg">{image.label || image.alt}</span>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-end p-6 text-center">
+                         <span className="text-white font-bold text-lg mb-1">{image.label || image.alt}</span>
+                         {image.desc && <span className="text-white/80 text-xs md:text-sm leading-tight">{image.desc}</span>}
                       </div>
                     </div>
                   </div>

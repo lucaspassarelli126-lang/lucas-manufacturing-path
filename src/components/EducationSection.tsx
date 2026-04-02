@@ -14,22 +14,38 @@ const courseImages = [
   {
     src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&auto=format&fit=crop&q=60',
     alt: 'Planilhas e análise de dados',
-    label: 'Excel'
+    label: 'Excel',
+    desc: 'Elaboração de planilhas e análise de dados.'
   },
   {
     src: 'https://images.unsplash.com/photo-1586528116311-ad8ed7c154cb?w=900&auto=format&fit=crop&q=60',
     alt: 'Fluxo e controle de materiais',
-    label: 'Logística'
+    label: 'Logística',
+    desc: 'Práticas logísticas e controle de fluxo de materiais.'
   },
   {
     src: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&auto=format&fit=crop&q=60',
     alt: 'Análise e organização financeira',
-    label: 'Relatórios Financeiros'
+    label: 'Relatórios Financeiros',
+    desc: 'Bases contábeis e consolidação de relatórios.'
   },
   {
     src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&auto=format&fit=crop&q=60',
     alt: 'Organização de processos',
-    label: 'Administração'
+    label: 'Administração',
+    desc: 'Fundamentos de gestão e administração de empresas.'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&auto=format&fit=crop&q=60',
+    alt: 'Computador e pacote office',
+    label: 'Informática / Pacote Office',
+    desc: 'Domínio prático de ferramentas fundamentais de escritório.'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1546410531-bea5aadcb6ce?w=900&auto=format&fit=crop&q=60',
+    alt: 'Estudos e idiomas',
+    label: 'Inglês Básico',
+    desc: 'Compreensão de leitura e comunicação fundamental.'
   }
 ];
 
