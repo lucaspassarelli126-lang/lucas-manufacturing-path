@@ -22,20 +22,19 @@ export const Preloader = () => {
       setCurrentWordIndex(-1);
       setShowSignature(true);
 
-      // Etapa 1: Assinatura "Lucas Patrick" por 1.2 segundos
+      // Etapa 1: Assinatura "Lucas Patrick" por 2 segundos
       const signatureTimer = setTimeout(() => {
         setShowSignature(false);
         setCurrentWordIndex(0);
-      }, 1200);
+      }, 2000);
 
       // Etapa 2: Ciclar pelas palavras (restante do tempo)
-      // Ajustado para caber no tempo total de 3s
       const wordInterval = setInterval(() => {
         setCurrentWordIndex((prev) => {
           if (prev < words.length - 1) return prev + 1;
           return prev;
         });
-      }, 250); // 7 palavras * 0.25s = 1.75s + 1.2s signature = ~3s
+      }, 400); // 7 palavras * 0.4s = 2.8s + 2s signature = ~4.8s + small exit buffer = 5s
 
       return () => {
         clearTimeout(signatureTimer);
@@ -96,7 +95,7 @@ export const Preloader = () => {
               <motion.div
                 initial={{ width: "0%" }}
                 animate={{ width: "100%" }}
-                transition={{ duration: 3, ease: "linear" }}
+                transition={{ duration: 5, ease: "linear" }}
                 className="h-full bg-primary shadow-[0_0_10px_rgba(230,57,70,0.8)]"
               />
             </div>

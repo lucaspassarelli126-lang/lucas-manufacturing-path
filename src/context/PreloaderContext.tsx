@@ -15,14 +15,14 @@ export const PreloaderProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     onCompleteRef.current = onComplete;
     setIsActive(true);
     
-    // O preloader dura 3 segundos exatos conforme pedido
+    // Aumentado para 5 segundos conforme solicitado
     setTimeout(() => {
       setIsActive(false);
       if (onCompleteRef.current) {
         onCompleteRef.current();
         onCompleteRef.current = undefined;
       }
-    }, 3000);
+    }, 5000);
   }, []);
 
   return (

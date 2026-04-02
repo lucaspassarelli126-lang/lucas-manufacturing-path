@@ -43,11 +43,30 @@ const NeonButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         const Comp = asChild ? Slot : "button"
         
         const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+          // Pega o href se for um link (asChild) 
+          const target = e.currentTarget;
+          const href = target.getAttribute('href');
+          const isExternal = target.getAttribute('target') === '_blank';
+
           if (withPreloader) {
             e.preventDefault();
             showPreloader(() => {
               if (onClick) {
                 onClick(e);
+              }
+
+              // Se for um link e não houver um handler de clique customizado que já navegou
+              if (href) {
+                if (isExternal) {
+                  window.open(href, '_blank');
+                } else if (href.startsWith('#')) {
+                  const element = document.querySelector(href);
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                } else {
+                  window.location.href = href;
+                }
               }
             });
           } else if (onClick) {
