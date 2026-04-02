@@ -22,11 +22,11 @@ export const Preloader = () => {
       setCurrentWordIndex(-1);
       setShowSignature(true);
 
-      // Etapa 1: Assinatura "Lucas Patrick" por 2 segundos
+      // Etapa 1: Assinatura "Lucas Patrick" por 0.8 segundos (mais rápida)
       const signatureTimer = setTimeout(() => {
         setShowSignature(false);
         setCurrentWordIndex(0);
-      }, 2000);
+      }, 800);
 
       // Etapa 2: Ciclar pelas palavras (restante do tempo)
       const wordInterval = setInterval(() => {
@@ -34,7 +34,7 @@ export const Preloader = () => {
           if (prev < words.length - 1) return prev + 1;
           return prev;
         });
-      }, 400); // 7 palavras * 0.4s = 2.8s + 2s signature = ~4.8s + small exit buffer = 5s
+      }, 600); // 7 palavras * 0.6s = 4.2s + 0.8s signature = exatos 5 segundos
 
       return () => {
         clearTimeout(signatureTimer);
