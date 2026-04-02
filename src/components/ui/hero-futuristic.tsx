@@ -37,9 +37,9 @@ export const HeroFuturistic = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="font-display text-6xl md:text-7xl lg:text-8xl font-black text-white mb-6 leading-[1] uppercase tracking-tighter"
+          className="font-display text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-[1] uppercase tracking-tighter"
         >
-          Lucas <span className="text-primary italic">Patrick</span>
+          <span className="text-flash-red">Lucas</span> <span className="text-primary italic">Patrick</span>
         </motion.h1>
 
         <motion.p
