@@ -13,14 +13,14 @@ const contacts = [
   {
     icon: Mail,
     label: "Email",
-    value: "lucas.passarelli00@hotmail.com",
-    href: "mailto:lucas.passarelli00@hotmail.com",
+    value: "lucas.patrick00@hotmail.com",
+    href: "mailto:lucas.patrick00@hotmail.com",
   },
   {
     icon: AtSign,
     label: "Instagram",
-    value: "@lucass_passarelli",
-    href: "https://instagram.com/lucass_passarelli",
+    value: "@lucass_patrick",
+    href: "https://instagram.com/lucass_patrick",
   },
 ];
 

@@ -25,7 +25,7 @@ const Index = () => (
     <ContactSection />
     <footer className="bg-industrial text-center py-6 px-4">
       <p className="text-sm text-primary-foreground/40">
-        © 2026 Lucas Passarelli — Candidato Aprendiz de Manufatura Bosch
+        © 2026 Lucas Patrick — Candidato Aprendiz de Manufatura Bosch
       </p>
     </footer>
   </>
